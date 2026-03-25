@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Михайло Сокур | Юридичний консультант</title>
+    <meta name="description" content="Персональний сайт Михайла Сокура — юридичні консультації, аналіз та підготовка документів. Професійна юридична допомога.">
+    <meta name="keywords" content="Михайло Сокур, юрист, юридична допомога, консультація, право, адвокат, аналіз документів">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            dark: '#8C6D31',
+                        },
+                        dark: '#050505',
+                        'dark-soft': '#16161D',
+                    },
+                    animation: {
+                        'slow-zoom': 'slowZoom 20s ease-in-out infinite alternate',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'bounce-slow': 'bounce 3s infinite',
+                    },
+                    keyframes: {
+                        slowZoom: {
+                            '0%': { transform: 'scale(1.05)' },
+                            '100%': { transform: 'scale(1.15)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: #050505;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .nav-scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#C5A059] selection:text-black">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-700 py-8">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="relative w-10 h-10 flex items-center justify-center border border-[#C5A059]/40 group-hover:border-[#C5A059] transition-all duration-500">
+                    <span class="font-serif text-[#C5A059] text-xl font-light">S</span>
+                    <div class="absolute -top-1 -right-1 w-2 h-2 bg-[#C5A059]"></div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-lg tracking-[0.2em] leading-none group-hover:text-[#C5A059] transition-colors uppercase">SOKUR</span>
+                    <span class="text-[8px] uppercase tracking-[0.4em] text-white/40 mt-1">Legal Counsel</span>
+                </div>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex gap-12">
+                <a href="#about" class="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#C5A059] transition-colors relative group">
+                    Про мене
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#services" class="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#C5A059] transition-colors relative group">
+                    Послуги
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="text-[10px] uppercase tracking-[0.3em] font-medium hover:text-[#C5A059] transition-colors relative group">
+                    Контакти
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#C5A059] transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <!-- CTA -->
+            <a href="https://t.me/MIXEL_SO" class="hidden md:flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] border border-white/20 px-6 py-3 hover:bg-white hover:text-black transition-all">
+                Зв'язатися <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden px-8">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-[#050505] z-10"></div>
+            <img 
+                src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=2000" 
+                alt="Legal Office" 
+                class="w-full h-full object-cover grayscale opacity-50 animate-slow-zoom"
+            >
+        </div>
+
+        <div class="relative z-20 max-w-7xl w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-end">
+                <div class="lg:col-span-8 animate-fade-in-up">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-px bg-[#C5A059]"></div>
+                        <span class="text-[10px] uppercase tracking-[0.5em] text-[#C5A059] font-medium">Юридична допомога • Консультації • Аналіз ситуацій</span>
+                    </div>
+                    <h1 class="text-[12vw] lg:text-[10vw] font-serif leading-[0.85] tracking-tighter mb-12">
+                        Михайло<br>
+                        <span class="italic text-[#C5A059] ml-[0.5em]">Сокур</span>
+                    </h1>
+                </div>
+                <div class="lg:col-span-4 pb-4 animate-fade-in-up" style="animation-delay: 0.3s;">
+                    <p class="text-white/50 text-sm leading-relaxed max-w-xs font-light">
+                        Орієнтація на чіткість, логіку та практичний результат у кожній справі.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 left-8 flex items-center gap-6">
+            <div class="flex gap-4">
+                <a href="#" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            </div>
+            <div class="h-px w-24 bg-white/10"></div>
+            <span class="text-[8px] uppercase tracking-[0.3em] text-white/30">Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-24 items-start">
+            <div class="reveal">
+                <div class="mb-20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <span class="font-mono text-[#C5A059] text-xs">01</span>
+                        <div class="h-px w-12 bg-[#C5A059]/30"></div>
+                        <span class="text-[10px] uppercase tracking-[0.4em] text-white/40">About the counsel</span>
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-serif text-balance leading-[0.9]">Про мене</h2>
+                </div>
+                <div class="space-y-8 text-white/60 text-lg font-light leading-relaxed">
+                    <p>
+                        Я — студент спеціальності «Право» з активною позицією у сфері юридичної діяльності та студентського самоврядування. Обіймаю посаду голови студентської ради, що дозволяє мені розвивати навички лідерства, комунікації та відповідальності за прийняття рішень.
+                    </p>
+                    <p>
+                        Займаюся аналізом правових ситуацій, підготовкою юридичних документів та наданням консультацій. У своїй діяльності орієнтуюсь на чіткість, логіку та практичний результат.
+                    </p>
+                    <p class="font-serif italic text-white text-lg">
+                        "Моя мета — формування професійного юридичного мислення та надання якісної правової допомоги."
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <div class="aspect-[4/5] bg-zinc-900 relative overflow-hidden group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+                        alt="Михайло Сокур" 
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
+                    >
+                    <div class="absolute inset-0 border-[20px] border-[#050505] pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-white/[0.02] border-y border-white/5 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal mb-20">
+                <div class="flex items-center gap-4 mb-4">
+                    <span class="font-mono text-[#C5A059] text-xs">02</span>
+                    <div class="h-px w-12 bg-[#C5A059]/30"></div>
+                    <span class="text-[10px] uppercase tracking-[0.4em] text-white/40">Practice areas</span>
+                </div>
+                <h2 class="text-5xl md:text-7xl font-serif text-balance leading-[0.9]">Послуги</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-px bg-white/10 reveal">
+                <div class="bg-[#050505] p-12 hover:bg-white/[0.03] transition-all group">
+                    <i data-lucide="scale" class="w-8 h-8 text-[#C5A059] mb-8 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-2xl mb-6 leading-tight">Юридичні консультації</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-light">Аналіз ситуацій та надання обґрунтованих рішень.</p>
+                </div>
+                <div class="bg-[#050505] p-12 hover:bg-white/[0.03] transition-all group">
+                    <i data-lucide="search" class="w-8 h-8 text-[#C5A059] mb-8 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-2xl mb-6 leading-tight">Аналіз документів</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-light">Перевірка договорів та юридичних текстів.</p>
+                </div>
+                <div class="bg-[#050505] p-12 hover:bg-white/[0.03] transition-all group">
+                    <i data-lucide="file-text" class="w-8 h-8 text-[#C5A059] mb-8 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-2xl mb-6 leading-tight">Підготовка документів</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-light">Складання заяв, скарг та інших документів.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles Section -->
+    <section class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-12 mb-24 reveal">
+            <h2 class="text-5xl md:text-7xl font-serif max-w-2xl leading-[0.9]">Переваги</h2>
+            <div class="h-px flex-1 bg-white/10 hidden md:block"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-16 reveal">
+            <div class="space-y-4">
+                <div class="text-[#C5A059] font-mono text-xs">01</div>
+                <h4 class="text-xl uppercase tracking-widest">Конфіденційність</h4>
+                <p class="text-white/40 text-sm font-light leading-relaxed">Абсолютна безпека вашої інформації — це фундамент нашої співпраці.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-[#C5A059] font-mono text-xs">02</div>
+                <h4 class="text-xl uppercase tracking-widest">Системний підхід</h4>
+                <p class="text-white/40 text-sm font-light leading-relaxed">Ми не просто лікуємо симптоми, ми усуваємо причину правової проблеми.</p>
+            </div>
+            <div class="space-y-4">
+                <div class="text-[#C5A059] font-mono text-xs">03</div>
+                <h4 class="text-xl uppercase tracking-widest">Орієнтація на результат</h4>
+                <p class="text-white/40 text-sm font-light leading-relaxed">Кожна дія спрямована на досягнення конкретної, вимірюваної мети.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-[#C5A059] px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="text-black reveal">
+                    <span class="text-[10px] uppercase tracking-[0.4em] font-bold mb-8 block">Контакти</span>
+                    <h2 class="text-6xl md:text-8xl font-serif leading-[0.85] mb-12 tracking-tighter">Зв'яжіться зі мною</h2>
+                    <div class="space-y-6">
+                        <a href="mailto:ser200802@gmail.com" class="block text-2xl md:text-4xl font-serif hover:translate-x-4 transition-transform">ser200802@gmail.com</a>
+                        <a href="tel:0985056034" class="block text-2xl md:text-4xl font-serif hover:translate-x-4 transition-transform">0985056034</a>
+                        <a href="https://t.me/MIXEL_SO" class="block text-2xl md:text-4xl font-serif hover:translate-x-4 transition-transform">@MIXEL_SO</a>
+                    </div>
+                </div>
+                <div class="bg-black p-12 reveal" style="transition-delay: 0.2s;">
+                    <h3 class="text-2xl font-serif mb-8 text-white">Швидкий запит</h3>
+                    <form class="space-y-8" onsubmit="event.preventDefault()">
+                        <input 
+                            type="text" 
+                            placeholder="Ваше ім'я" 
+                            class="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-[#C5A059] transition-colors text-sm text-white"
+                        >
+                        <input 
+                            type="email" 
+                            placeholder="Email / Telegram" 
+                            class="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-[#C5A059] transition-colors text-sm text-white"
+                        >
+                        <textarea 
+                            placeholder="Коротко про ваше питання" 
+                            rows="3"
+                            class="w-full bg-transparent border-b border-white/20 py-4 outline-none focus:border-[#C5A059] transition-colors text-sm text-white resize-none"
+                        ></textarea>
+                        <button class="w-full bg-[#C5A059] text-black py-4 uppercase tracking-widest text-[10px] font-bold hover:bg-white transition-all">
+                            Надіслати повідомлення
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="relative w-10 h-10 flex items-center justify-center border border-[#C5A059]/40 group-hover:border-[#C5A059] transition-all duration-500">
+                    <span class="font-serif text-[#C5A059] text-xl font-light">S</span>
+                    <div class="absolute -top-1 -right-1 w-2 h-2 bg-[#C5A059]"></div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-lg tracking-[0.2em] leading-none group-hover:text-[#C5A059] transition-colors uppercase">SOKUR</span>
+                    <span class="text-[8px] uppercase tracking-[0.4em] text-white/40 mt-1">Legal Counsel</span>
+                </div>
+            </div>
+            
+            <div class="flex gap-12 text-[8px] uppercase tracking-[0.3em] text-white/30">
+                <span>Privacy Policy</span>
+                <span>Terms of Service</span>
+                <span>© 2026 SOKUR LEGAL</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="https://t.me/MIXEL_SO" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="send" class="w-4 h-4"></i></a>
+                <a href="#" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                <a href="#" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="text-white/30 hover:text-[#C5A059] transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 100;
+                if (isVisible) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+    </script>
+</body>
+</html>
+
